@@ -9,72 +9,50 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.davescoolmobileapps.arithmetic3.MultiplicationTable">
 
-    <EditText
+    <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:id="@+id/x"
-        android:width="100px"
+        android:layout_alignParentStart="true"
+        android:text="Difficulty Level?"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Problem Type?"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_marginTop="22dp"
+        android:layout_below="@+id/spinner"
+        android:layout_alignParentStart="true" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_toEndOf="@+id/textView"
-        android:layout_marginStart="27dp"
-        android:onClick="prod" />
+        android:entries="@array/difficulty"
+        android:minWidth="50dp" />
 
-    <TextView
+    <Spinner
+        android:id="@+id/spinner2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Enter #1:"
-        android:id="@+id/textView"
-        android:layout_alignTop="@+id/x"
-        android:layout_alignParentStart="true"
-        android:onClick="prod" />
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_toEndOf="@+id/textView2"
+        android:entries="@array/problemType"
+        android:spinnerMode="dropdown" />
 
-    <TextView
+    <Button
+        android:id="@+id/goButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Enter #2:"
-        android:id="@+id/textView2"
-        android:layout_below="@+id/x"
-        android:layout_alignParentStart="true"
-        android:onClick="prod" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:id="@+id/y"
-        android:width="50dp"
-        android:layout_alignTop="@+id/textView2"
-        android:layout_alignStart="@+id/x" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:id="@+id/product"
-        android:layout_below="@+id/y"
-        android:layout_alignParentStart="true"
-        android:width="200dp" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/z"
-        android:layout_alignEnd="@+id/product"
-        android:layout_below="@+id/product"
-        android:layout_toEndOf="@+id/y" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="The product is "
-        android:id="@+id/textView3"
-        android:layout_below="@+id/product"
-        android:layout_alignParentStart="true" />
+        android:layout_marginTop="33dp"
+        android:text="Go"
+        android:layout_below="@+id/textView2"
+        android:layout_alignEnd="@+id/spinner"
+        android:layout_marginEnd="19dp" />
 
 </RelativeLayout>
