@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Arithmetic3</string>
+    <string name="app_name">Arithmetic Test</string>
     <string-array name="difficulty">
         <item>1</item>
         <item>2</item>
