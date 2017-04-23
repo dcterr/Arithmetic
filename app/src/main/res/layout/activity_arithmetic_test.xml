@@ -16,22 +16,21 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="false"
         android:layout_marginTop="29dp"
-        android:text="TextView"
+        android:text="tv3"
         android:textSize="40dp"
         tools:height="20dp"
-        tools:layout_height="50dp"
-        tools:text="15" />
+        tools:layout_height="50dp" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:text="23"
-        android:textSize="40dp"
-        tools:layout_height="50dp"
+        android:layout_alignStart="@+id/textView3"
         android:layout_below="@+id/textView3"
-        android:layout_alignStart="@+id/textView3" />
+        android:layout_centerHorizontal="true"
+        android:text="tv4"
+        android:textSize="40dp"
+        tools:layout_height="50dp" />
 
     <TextView
         android:id="@+id/textView5"
@@ -43,21 +42,26 @@
         android:text="+"
         android:textSize="40dp"
         tools:layout_height="50dp" />
+
     <View
+        android:id="@+id/separator"
         android:layout_width="100dp"
         android:layout_height="1dp"
-        android:background="@android:color/darker_gray"
+        android:layout_alignLeft="@+id/textView5"
+        android:layout_alignRight="@+id/textView4"
         android:layout_below="@+id/textView5"
         android:layout_centerHorizontal="true"
-        />
+        android:background="@android:color/darker_gray" />
 
     <EditText
         android:id="@+id/editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/textView4"
-        android:layout_below="@+id/textView4"
+        android:layout_alignEnd="@+id/separator"
+        android:layout_alignStart="@+id/separator"
+        android:layout_below="@+id/separator"
         android:ems="10"
         android:inputType="number"
+        android:textSize="40dp"
         tools:layout_width="100dp" />
 </RelativeLayout>
