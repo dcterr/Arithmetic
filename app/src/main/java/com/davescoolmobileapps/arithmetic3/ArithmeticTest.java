@@ -48,7 +48,7 @@ public class ArithmeticTest extends AppCompatActivity {
         TextView tv5 = (TextView) findViewById(textView5);
         Random rnd = new Random();
         int a=0,b=0;
-        int min = level==(int) pow(10,level-1);
+        int min = (int) pow(10,level-1);
         int max = (int) pow(10,level) -1;
         a = min + rnd.nextInt(max-min);
         b = min + rnd.nextInt(max-min);

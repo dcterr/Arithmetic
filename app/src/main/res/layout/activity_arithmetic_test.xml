@@ -54,7 +54,7 @@
         android:background="@android:color/darker_gray" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/stuGuess"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/separator"
@@ -63,5 +63,16 @@
         android:ems="10"
         android:inputType="number"
         android:textSize="40dp"
-        tools:layout_width="100dp" />
+        tools:layout_width="100dp"
+        android:onClick="compareResult"
+        />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/stuGuess"
+        android:layout_below="@+id/stuGuess"
+        android:layout_marginTop="32dp"
+        android:text="TextView" />
 </RelativeLayout>
