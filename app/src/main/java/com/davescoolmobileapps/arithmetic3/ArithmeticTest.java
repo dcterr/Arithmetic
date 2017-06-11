@@ -1,5 +1,8 @@
 package com.davescoolmobileapps.arithmetic3;
 
+import android.app.Activity;
+import android.content.Intent;
+import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -18,7 +21,8 @@ import static java.lang.Math.pow;
 
 public class ArithmeticTest extends AppCompatActivity {
 
-    int result,level,counter=0;
+    int result,level,counter=0,wrong = 0;
+    boolean first_try = true;
     String probType;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,10 +40,24 @@ public class ArithmeticTest extends AppCompatActivity {
         if(guess == result){
             counter++;
             tv6.setText("Good Job!");
-            if(counter < 10)
+            if(counter < 2) {
                 changeProb();
+                first_try = true;
+            }
+            else{
+                int score = 10*(10-wrong);
+                Intent resultIntent = new Intent();
+                resultIntent.putExtra("SCORE", score);
+                setResult(Activity.RESULT_OK, resultIntent);
+                finish();
+
+            }
         }
         else{
+            if(first_try) {
+                wrong++;
+            }
+            first_try = false;
             tv6.setText("Try again");
         }
         et1.setText("");

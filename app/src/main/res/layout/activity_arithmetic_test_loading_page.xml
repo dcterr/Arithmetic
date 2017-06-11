@@ -21,11 +21,11 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/problem_type_dropdown"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_marginTop="22dp"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/difficulty_spinner"
-        android:layout_alignParentStart="true" />
+        android:layout_marginTop="22dp"
+        android:text="@string/problem_type_dropdown"
+        android:textAppearance="@android:style/TextAppearance.Material.Large" />
 
     <Spinner
         android:id="@+id/difficulty_spinner"
@@ -55,5 +55,15 @@
         android:layout_alignEnd="@+id/difficulty_spinner"
         android:layout_marginEnd="19dp"
         android:onClick="launchMathQuiz" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/goButton"
+        android:layout_alignStart="@+id/goButton"
+        android:layout_below="@+id/goButton"
+        android:layout_marginTop="19dp"
+        android:textAppearance="@android:style/TextAppearance.Material.Large" />
 
 </RelativeLayout>
