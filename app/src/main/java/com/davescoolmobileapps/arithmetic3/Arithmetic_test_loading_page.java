@@ -24,7 +24,8 @@ public class Arithmetic_test_loading_page extends AppCompatActivity {
         //switch(requestCode) {
             //case (STATIC_INTEGER_VALUE) : {
                 if (resultCode == Activity.RESULT_OK) {
-                    String score = data.getStringExtra("SCORE");
+                    int score;
+                    score = data.getIntExtra("SCORE",0);
                     TextView tv7 = (TextView) findViewById(textView7);
                     tv7.setText("Your score is "+score+"%");
                 }
@@ -39,7 +40,7 @@ public class Arithmetic_test_loading_page extends AppCompatActivity {
         Spinner pts = (Spinner) findViewById(problem_type_spinner);
         intent.putExtra("LEVEL", ds.getSelectedItem().toString());
         intent.putExtra("PROB_TYPE", pts.getSelectedItem().toString());
-        startActivity(intent);
+        startActivityForResult(intent,0);
     }
 
 }

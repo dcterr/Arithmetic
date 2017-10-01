@@ -84,7 +84,7 @@ public class ArithmeticTest extends AppCompatActivity {
         }
         else if (probType.compareTo("Multiplication") == 0)
         {
-            tv5.setText("*");
+            tv5.setText("x");
             result=a*b;
         }
         else if (probType.compareTo("Division") == 0)
@@ -108,7 +108,7 @@ public class ArithmeticTest extends AppCompatActivity {
                     break;
 
                 case 2:
-                    tv5.setText("*");
+                    tv5.setText("x");
                     result = a * b;
                     break;
 
