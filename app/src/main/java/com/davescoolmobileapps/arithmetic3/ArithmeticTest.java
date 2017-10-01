@@ -21,7 +21,7 @@ import static java.lang.Math.pow;
 
 public class ArithmeticTest extends AppCompatActivity {
 
-    int result,level,counter=0,wrong = 0;
+    int result,level,counter=0,wrong = 0, probIndex;
     boolean first_try = true;
     String probType;
     @Override
@@ -31,6 +31,7 @@ public class ArithmeticTest extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         level = parseInt(extras.getString("LEVEL"));
         probType = extras.getString("PROB_TYPE");
+        probIndex = (int) (4.0 * Math.random());
         changeProb();
     }
     protected void compareResult(View view){
@@ -40,7 +41,8 @@ public class ArithmeticTest extends AppCompatActivity {
         if(guess == result){
             counter++;
             tv6.setText("Good Job!");
-            if(counter < 2) {
+            if(counter < 10) {
+                probIndex = (int) (4.0 * Math.random());
                 changeProb();
                 first_try = true;
             }
@@ -50,7 +52,6 @@ public class ArithmeticTest extends AppCompatActivity {
                 resultIntent.putExtra("SCORE", score);
                 setResult(Activity.RESULT_OK, resultIntent);
                 finish();
-
             }
         }
         else{
@@ -86,11 +87,36 @@ public class ArithmeticTest extends AppCompatActivity {
             tv5.setText("*");
             result=a*b;
         }
-        else
+        else if (probType.compareTo("Division") == 0)
         {
             result=a;
             a*=b;
-            tv5.setText("/");
+            tv5.setText("÷");
+        }
+        else
+        {
+            switch (probIndex) {
+                case 0:
+                    tv5.setText("+");
+                    result = a + b;
+                    break;
+
+                case 1:
+                    result = a;
+                    a += b;
+                    tv5.setText("-");
+                    break;
+
+                case 2:
+                    tv5.setText("*");
+                    result = a * b;
+                    break;
+
+                case 3:
+                    result = a;
+                    a *= b;
+                    tv5.setText("÷");
+            }
         }
         TextView tv3 = (TextView) findViewById(textView3);
         tv3.setText(""+a);
